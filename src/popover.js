@@ -56,6 +56,6 @@ export class Popover {
     const left = (btnRect.left + btnRect.width / 2) - (popoverRect.width / 2);
 
     this.popoverElement.style.top = `${top}px`;
-    this.popoverElement.style.left = `${left}px`;
+    this.popoverElement.style.left = `${left}px`; 
   }
 }

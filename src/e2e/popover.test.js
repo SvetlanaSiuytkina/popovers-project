@@ -57,8 +57,6 @@ describe('popover elements', () => {
   });
     
   test('popover title and content are correct', async () => {
-    await page.click('.btn');
-
     //cначала ждём появления поповер
     await page.waitForSelector('.popover.visible', { timeout: 10000 });
 

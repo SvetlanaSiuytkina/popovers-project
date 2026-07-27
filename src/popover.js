@@ -12,6 +12,9 @@ export class Popover {
     this.popoverElement = popoverElement;
     this.popoverElement.className = 'popover';
 
+    const innerElement = document.createElement('div');
+    innerElement.className = 'popover-inner';
+
     const titleElement = document.createElement('div');
     titleElement.className = 'popover-title';
     titleElement.textContent = this.title;
@@ -20,13 +23,13 @@ export class Popover {
     contentElement.className = 'popover-content';
     contentElement.textContent = this.content;
 
+    innerElement.append(titleElement, contentElement);
+
     const arrowElement = document.createElement('div');
     arrowElement.className = 'popover-arrow';
 
-    this.popoverElement.appendChild(titleElement);
-    this.popoverElement.appendChild(contentElement);
-    this.popoverElement.appendChild(arrowElement);
-    document.body.appendChild(this.popoverElement);
+    this.popoverElement.append(titleElement, arrowElement);
+    document.body.append(this.popoverElement);
 
     this.btn.addEventListener('click', () => this.toggle());
   }

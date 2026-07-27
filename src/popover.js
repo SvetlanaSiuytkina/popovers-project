@@ -28,7 +28,7 @@ export class Popover {
     const arrowElement = document.createElement('div');
     arrowElement.className = 'popover-arrow';
 
-    this.popoverElement.append(titleElement, arrowElement);
+    this.popoverElement.append(innerElement, arrowElement);
     document.body.append(this.popoverElement);
 
     this.btn.addEventListener('click', () => this.toggle());
